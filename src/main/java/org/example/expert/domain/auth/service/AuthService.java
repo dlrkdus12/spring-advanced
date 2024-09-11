@@ -40,6 +40,7 @@ public class AuthService {
                 encodedPassword,
                 userRole
         );
+
         User savedUser = userRepository.save(newUser);
 
         String bearerToken = jwtUtil.createToken(savedUser.getId(), savedUser.getEmail(), userRole);
